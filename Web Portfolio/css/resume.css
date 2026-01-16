@@ -1,0 +1,391 @@
+/* --- resume.css --- */
+
+.resume-main {
+    margin-top: 140px;
+    width: 100%;
+    max-width: 1344px; /* Matches layout constraint */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 80px;
+}
+
+
+.btn.btn-primary {
+    color: #fff;
+    background: #775537;
+    padding: 20px;
+}
+
+body[data-theme="dark"] .btn.btn-primary {
+    color: #C3F208;
+    background: #161B22; 
+}
+
+
+/* 1. HERO SECTION */
+.resume-hero {
+    /* Light Mode Gradient */
+    background: linear-gradient(135deg, rgba(251, 226, 157, 0.40) 0%, rgba(192, 221, 218, 0.40) 100%);
+    box-shadow: 0 19.704px 39.409px -9.458px rgba(0, 0, 0, 0.25);
+    border-radius: 50.443px;
+    
+    width: 1059.31px; /* Fixed width per request */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 60px;
+    box-sizing: border-box;
+    margin-bottom: 40px;
+}
+
+.resume-hero-img img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid rgba(255,255,255,0.5);
+}
+
+.resume-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.resume-hero-content h1 {
+    font-family: var(--heading-font);
+    font-style: var(--heading-style);
+    font-size: 3rem;
+    color: #775635;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.resume-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.contact-pill {
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #364153;
+    border: 1px solid #ddd;
+    font-family: var(--nav-font);
+}
+
+/* DARK MODE HERO */
+[data-theme="dark"] .resume-hero {
+    background: #C3F208;
+    box-shadow: 0 19.704px 39.409px -9.458px rgba(0, 0, 0, 0.25);
+}
+
+[data-theme="dark"] .resume-hero-content h1 {
+    font-family: 'Space Mono', monospace;
+    font-style: normal;
+    color: #161B22; 
+}
+
+[data-theme="dark"] .contact-pill {
+    background: #161B22;
+    color: #fff;
+    border: none;
+}
+
+.status-badge {
+    padding: 10px 15px;
+    font-weight: 300px;
+}
+
+/* 2. GRID LAYOUT */
+.resume-grid-layout {
+    width: 1059.31px;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start; /* Ensures columns start at top */
+}
+
+.left-col { flex: 1; display: flex; flex-direction: column; gap: 40px; }
+.right-col { flex: 1; display: flex; flex-direction: column; gap: 40px; }
+
+.section-header {
+    font-family: var(--heading-font);
+    font-style: italic;
+    color: #775635;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+[data-theme="dark"] .section-header {
+    font-family: 'Space Mono', monospace;
+    font-style: normal;
+    color: #C3F208;
+}
+
+/* RESUME CARDS (Shared Base) */
+.resume-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+[data-theme="dark"] .resume-card {
+    background: #21262D;
+    border: 1px solid #30363D;
+}
+
+/* EDUCATION CARDS Specifics */
+.ed-card .card-year {
+    display: inline-block;
+    background: #FBE29D;
+    color: #775635;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 0.75rem;
+    width: fit-content;
+    margin-bottom: 10px;
+}
+
+[data-theme="dark"] .ed-card .card-year {
+    background: #C3F208;
+    color: #161B22;
+}
+
+.resume-card h3 {
+    font-size: 1.1rem;
+    color: #775635;
+    margin-bottom: 5px;
+    font-family: var(--heading-font);
+}
+[data-theme="dark"] .resume-card h3 { color: #fff; font-family: var(--nav-font); }
+
+.resume-card p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+[data-theme="dark"] .resume-card p { color: #ccc; }
+
+.card-note {
+    font-size: 0.8rem !important;
+    opacity: 0.7;
+    margin-bottom: 10px !important;
+}
+
+/* Tags (President's Lister etc) */
+.tags-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.tag {
+    display: inline-flex;   /* 🔑 */
+    align-items: center;
+    width: fit-content;     /* extra safety */
+    
+    background: #5D4037;
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+[data-theme="dark"] .tag { background: #C3F208; color: #161B22; }
+
+/* LANGUAGE CARDS */
+.language-card {
+    background: #F1F1F1; /* Grey Background */
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+[data-theme="dark"] .language-card { background: #30363D; }
+
+.flag-icon { font-size: 2rem; }
+.language-card h3 { margin: 0; color: #364153; }
+.language-card p { margin: 0; font-size: 0.85rem; }
+[data-theme="dark"] .language-card h3 { color: #fff; }
+
+
+/* JOB CARDS Specifics */
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 5px;
+}
+
+.job-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.card-year-job {
+    background: #C0DDDA; /* Blueish for Job Dates */
+    color: #364153;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+[data-theme="dark"] .card-year-job { background: #C3F208; color: #161B22; }
+
+.job-loc {
+    font-size: 0.8rem !important;
+    opacity: 0.7;
+    margin-bottom: 10px !important;
+}
+
+.job-desc {
+    padding-left: 15px;
+    margin: 0;
+}
+.job-desc li {
+    font-size: 0.85rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+[data-theme="dark"] .job-desc li { color: #ccc; }
+
+
+/* 3. CERTIFICATIONS */
+.certifications-section {
+    width: 1059.31px;
+}
+.certs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* UPDATED CERT CARD FOR CLICKABILITY */
+.cert-card {
+    background: #FBE29D; /* Yellow Cards */
+    padding: 25px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    /* Make it behave like a nice link */
+    text-decoration: none; 
+    color: inherit;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cert-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+[data-theme="dark"] .cert-card {
+    background: #30363D; /* Dark Grey Cards */
+    border: 1px solid #444;
+}
+
+.cert-year {
+    background: #364153; 
+    color: #fff; 
+    padding: 2px 10px; 
+    border-radius: 8px; 
+    font-size: 0.7rem; 
+    width: fit-content; 
+    margin-bottom: 10px;
+}
+[data-theme="dark"] .cert-year { background: #fff; color: #000; }
+
+.cert-card h3 {
+    margin: 0 0 5px 0;
+    font-size: 1rem;
+    color: #364153;
+}
+[data-theme="dark"] .cert-card h3 { color: #C3F208; }
+
+.cert-issuer {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #555;
+    background: rgba(255,255,255,0.5);
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 15px; /* Spacing before view link */
+    display: inline-block;
+}
+[data-theme="dark"] .cert-issuer { background: rgba(255,255,255,0.1); color: #ccc; }
+
+/* New "View Certificate" Text Style */
+.view-cert-text {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #775635;
+    margin-top: auto; /* Pushes it to bottom if card height varies */
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.cert-card:hover .view-cert-text {
+    border-bottom: 1px solid #775635;
+}
+
+[data-theme="dark"] .view-cert-text {
+    color: #C3F208;
+}
+[data-theme="dark"] .cert-card:hover .view-cert-text {
+    border-bottom: 1px solid #C3F208;
+}
+
+
+/* 4. BOTTOM CTA */
+.resume-bottom-cta {
+    background: linear-gradient(135deg, #FBE39D 0%, rgba(191, 221, 219, 0.50) 50%, #FBE39D 100%);
+    border-radius: 37.833px;
+    width: 1059.329px;
+    height: 261.623px;
+    padding: 50.431px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+.resume-bottom-cta h2 {
+    font-family: var(--heading-font);
+    font-style: italic;
+    font-size: 2.5rem;
+    color: #775635;
+}
+
+[data-theme="dark"] .resume-bottom-cta {
+    background: linear-gradient(141deg, rgba(255, 255, 255, 0.15) 11.23%, rgba(170, 194, 72, 0.15) 54.93%, rgba(195, 242, 8, 0.15) 86.35%);
+}
+
+[data-theme="dark"] .resume-bottom-cta h2 {
+    font-family: 'Space Mono', monospace;
+    font-style: normal;
+    color: #C3F208;
+}
+
+[data-theme="dark"] .resume-bottom-cta p {
+    color: #fff;
+}

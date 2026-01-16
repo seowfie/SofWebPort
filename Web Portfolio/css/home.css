@@ -1,0 +1,176 @@
+/* --- home.css --- */
+
+:root {
+    --hero-bg: linear-gradient(135deg, #FBE39D 0%, rgba(191, 221, 219, 0.50) 50%, #FBE39D 100%);
+    --hero-text-color: #775635;
+    --hero-doodle-url: url('../assets/doodlelight.png'); /* Ensure path is correct relative to CSS */
+    --profile-bg: linear-gradient(180deg, #FBE29D 0%, #C0DDDA 100%);
+    --profile-shadow: 0 24.054px 48.108px -11.546px rgba(0, 0, 0, 0.25);
+}
+
+[data-theme="dark"] {
+    --hero-bg: #C3F208; 
+    --hero-text-color: #161B22; 
+    --hero-doodle-url: url('../assets/doodledark.png');
+    --profile-bg: #c3f208;
+}
+
+[data-theme="dark"] .status-badge { background: #C3F208; color: #161B22; }
+
+/* --- HERO SECTION --- */
+.hero-container {
+    margin-top: 130px; 
+    width: 95%; /* Responsive Width */
+    max-width: 1344px;
+    height: auto;
+    min-height: 550px;
+    border-radius: 48px;
+    background: var(--hero-bg);
+    
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 100px 20px 0 20px; /* Top padding for text */
+    box-sizing: border-box;
+    transition: background 0.3s ease;
+    overflow: hidden; /* Clips the doodle at bottom */
+}
+
+.hero-container h1 {
+    color: var(--hero-text-color); 
+    font-size: 8rem;
+    line-height: 1;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.hero-sub {
+    color: var(--hero-text-color);
+    font-family: var(--nav-font); 
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    z-index: 2;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+/* HERO DOODLE POSITIONING */
+.hero-doodle {
+    width: 931px;
+    max-width: 90%; /* Scales down on mobile */
+    height: auto;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    bottom: -40px; 
+    transition: bottom 0.3s ease;
+}
+
+[data-theme="dark"] .hero-doodle { bottom: -50px; }
+
+.hero-doodle img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- ABOUT PREVIEW SECTION --- */
+.about-split {
+    display: flex;
+    width: 90%;
+    max-width: 1344px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 100px;
+    margin-top: 80px;
+    gap: 50px;
+}
+
+.about-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+}
+
+.about-left h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.about-right {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-img {
+    width: 100%;
+    max-width: 520px;
+    border-radius: 46px;
+    background: var(--profile-bg);
+    box-shadow: var(--profile-shadow);
+    padding: 20px; 
+    box-sizing: border-box;
+}
+
+[data-theme="dark"] .profile-img { border-radius: 0 !important; }
+
+
+/* =========================================
+   RESPONSIVE (HOME)
+   ========================================= */
+
+/* Tablet (Max 1024px) */
+@media (max-width: 1024px) {
+    .hero-container h1 { font-size: 5rem; }
+    
+    .about-split {
+        flex-direction: column-reverse; /* Stack image on top */
+        text-align: center;
+    }
+    
+    .about-left, .about-right { width: 100%; }
+    
+    .about-left { align-items: center; } /* Center buttons/text */
+    
+    /* Profile Image on Tablet */
+    .profile-img { max-width: 400px; }
+}
+
+/* Mobile (Max 600px) */
+@media (max-width: 600px) {
+    .hero-container {
+        margin-top: 110px;
+        min-height: 400px;
+        padding-top: 60px;
+        border-radius: 30px;
+    }
+    
+    /* Hide decorative labels on small screens */
+    .hero-container > div[style*="absolute"] { display: none; }
+
+    .hero-container h1 { font-size: 3rem; }
+    .hero-sub { font-size: 1.2rem; }
+    
+    .hero-doodle { bottom: -20px; }
+
+    .about-left h1 { font-size: 2.5rem; }
+    
+    .about-left div {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+    }
+    
+    .btn { margin-right: 0; width: 100%; }
+}

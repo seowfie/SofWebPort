@@ -1,0 +1,274 @@
+/* --- about.css --- */
+
+.about-main {
+    margin-top: 140px; 
+    width: 1344px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+    margin-bottom: 80px;
+}
+
+/* 1. HERO CARD */
+.about-hero-card {
+    width: 100%;
+    height: auto;
+    min-height: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 48px;
+    padding: 60px; /* Note: This 60px padding is what we match below */
+    position: relative;
+    box-sizing: border-box;
+    background: linear-gradient(135deg, #FFF8E7 0%, #E8F4F2 100%);
+    overflow: hidden;
+    transition: background 0.3s ease;
+}
+
+.about-hero-content {
+    width: 60%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.about-hero-content h1 {
+    font-family: var(--heading-font);
+    font-style: var(--heading-style);
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    color: var(--heading-color);
+}
+
+.about-hero-content p {
+    font-family: var(--body-font);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 90%;
+    color: var(--body-color);
+    
+    /* FIX: Force text to be Regular (not Bold) */
+    font-weight: 300; 
+}
+
+.about-buttons { display: flex; gap: 15px; }
+
+.info-pill {
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-family: var(--nav-font);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.email-pill { background-color: #C0DDDA; color: #364153; }
+.loc-pill { background-color: #FBE29D; color: #775635; }
+
+.about-hero-image {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.about-hero-image img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 24px;
+}
+
+/* Dark Mode Hero Overrides */
+[data-theme="dark"] .about-hero-card { background: #C3F208; }
+
+[data-theme="dark"] .about-hero-content h1,
+[data-theme="dark"] .about-hero-content p,
+[data-theme="dark"] .about-hero-content strong {
+    color: #161B22; 
+    font-family: 'Space Mono', monospace;
+    font-style: normal;
+}
+[data-theme="dark"] .about-hero-content h1 { font-weight: 700; }
+
+[data-theme="dark"] .email-pill {
+    background-color: #161B22; color: #C3F208; border: 1px solid #161B22;
+}
+[data-theme="dark"] .loc-pill {
+    background-color: transparent; border: 1px solid #161B22; color: #161B22;
+}
+[data-theme="dark"] .about-hero-image img {
+    border: none; 
+}
+
+/* --- 2. TECH SKILLS SECTION --- */
+
+.tech-skills-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* Aligns content to the left matching Hero padding */
+    align-items: flex-start; 
+    padding-left: 60px; 
+    box-sizing: border-box;
+}
+
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 50px;
+    font-family: 'Figtree', sans-serif; 
+    font-weight: 700;
+    font-style: italic;
+    color: var(--heading-color);
+    text-align: left;
+    width: 100%;
+}
+
+[data-theme="dark"] .section-title {
+    font-family: 'Space Mono', monospace;
+    font-style: normal;
+    color: #C3F208;
+}
+
+.skill-category {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    margin-bottom: 60px;
+    width: 100%;
+}
+
+.category-label {
+    display: flex;
+    /* INCREASED WIDTH to fit larger cards */
+    width: 1080px; 
+    height: 64px;
+    padding: 0 32px;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+    
+    font-family: var(--heading-font);
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Alternating Colors */
+.skill-category:nth-of-type(odd) .category-label {
+    border-radius: 23.133px;
+    background: #E6F0EF;
+    border: 1.928px solid rgba(192, 221, 218, 0.50);
+    color: #5A6A7E;
+}
+.skill-category:nth-of-type(even) .category-label {
+    border-radius: 23.133px;
+    background: #FBE29D;
+    border: 1.928px solid rgba(192, 221, 218, 0.50);
+    color: #775635;
+}
+
+[data-theme="dark"] .category-label {
+    border-radius: 26.162px;
+    border: 2.18px solid rgba(0, 0, 0, 0.00);
+    background: #30363D;
+    color: #FFF;
+    font-family: 'Michroma', sans-serif;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    text-transform: none;
+}
+
+/* SKILLS GRID - WIDER TO FIT LARGER CARDS */
+.skills-grid {
+    width: 1080px; /* Matches new label width */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px; /* Optimized gap for 7 items */
+}
+
+.skill-card {
+    /* MATH: (1080px - (6 gaps * 16px)) / 7 items = ~140px */
+    width: 140px; 
+    height: 140px; /* Square shape */
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    
+    border-radius: 24px;
+    background: #F1F1F1;
+    border: 2.18px solid transparent;
+    transition: transform 0.2s ease;
+}
+
+.skill-card:hover { transform: translateY(-5px); }
+
+/* Icons slightly larger */
+.skill-card img { width: 55px; height: 55px; object-fit: contain; }
+
+.skill-card span {
+    font-family: var(--body-font);
+    font-size: 0.95rem; /* Larger text */
+    font-weight: bold;
+    color: #364153;
+    text-align: center;
+}
+
+[data-theme="dark"] .skill-card { background: #7D8590; }
+[data-theme="dark"] .skill-card span { color: #FFFFFF; }
+/* --- 3. SOFT SKILLS SECTION --- */
+.soft-skills-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.soft-skills-container {
+    width: 1344px;
+    padding: 60px;
+    border-radius: 48px;
+    background: linear-gradient(90deg, #FBE29D 0%, #C0DDDA 100%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+/* UNIFIED SOFT PILL STYLE (Removed highlight-pill overrides) */
+.soft-pill, .highlight-pill {
+    padding: 15px 35px;
+    border-radius: 50px;
+    border: 1px solid #775635;
+    color: #775635;
+    font-family: var(--nav-font);
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1rem;
+    background: transparent; /* Ensures they are all transparent */
+}
+
+/* Dark Mode Soft Skills */
+[data-theme="dark"] .soft-skills-container { background: #C3F208; }
+
+[data-theme="dark"] .soft-pill, 
+[data-theme="dark"] .highlight-pill {
+    border: 1px solid #161B22; 
+    color: #161B22; 
+    font-style: normal;
+    background: transparent;
+}

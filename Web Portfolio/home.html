@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sofia Sarmiento | Portfolio</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+    <div class="navbar-wrapper">
+        <nav>
+            <div class="nav-logo">
+                <a href="home.html">
+                    <img src="assets/portlogo.png" alt="Logo">
+                </a>
+            </div>
+
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <div class="nav-links">
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="resume.html">Resume</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <button id="theme-toggle" class="theme-toggle-btn">
+                <svg class="icon-sun" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg class="icon-moon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+        </nav>
+    </div>
+
+    <header class="hero-container">
+        <div style="position: absolute; top: 40px; left: 50px; padding: 10px 24px; background: rgba(0,0,0,0.05); border-radius: 30px; color: var(--hero-text-color); font-weight: bold; font-family: var(--nav-font); font-size: 14px; z-index: 3;">
+            UI/UX | Front-end
+        </div>
+
+        <div style="position: absolute; top: 40px; right: 50px; padding: 10px 24px; background: rgba(255,255,255,0.6); border-radius: 30px; color: var(--hero-text-color); font-weight: bold; font-family: var(--nav-font); font-size: 14px; z-index: 3;">
+            Sofia
+        </div>
+
+        <p class="hero-sub">Welcome to my web</p>
+        <h1>PORTFOLIO</h1>
+        
+        <div class="hero-doodle">
+            <img id="hero-doodle-img" src="assets/doodlelight.png" alt="Character Doodle">
+        </div>
+    </header>
+
+    <section class="about-split">
+        <div class="about-left">
+            <div class="status-badge">
+                <span style="margin-right: 5px;">★</span> Open to opportunities
+            </div>
+
+            <span class="subtitle">Hi, I'm</span>
+            <h1>SOFIA SARMIENTO</h1>
+            <p class="subtitle" style="text-transform: none; font-size: 1.5rem; margin-top: -10px;">UI/UX Designer & Front-end Developer</p>
+            
+            <p style="margin: 20px 0 30px 0; max-width: 450px;">
+                Creating beautiful, functional digital experiences. Passionate about clean design and efficient code that makes a difference.
+            </p>
+
+            <div>
+                <a href="projects.html" class="btn btn-outline">View Projects &rarr;</a>
+                <a href="contact.html" class="btn btn-primary">Hire Me</a>
+            </div>
+        </div>
+
+        <div class="about-right">
+            <img id="profile-img" src="assets/homelight.png" alt="Sofia Profile" class="profile-img">
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-main">
+            <div class="footer-col brand-col">
+                <h3>Let's Create Together</h3>
+                <p>Always excited to collaborate on new projects and creative ideas!</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/sarmientosof" target="_blank" rel="noopener">
+                        <img class="social-icon" src="assets/socialslight/linkedin.png" width="40" alt="LinkedIn">
+                    </a>
+
+                    <a href="https://github.com/seowfie" target="_blank" rel="noopener">
+                        <img class="social-icon" src="assets/socialslight/github.png" width="40" alt="GitHub">
+                    </a>
+
+                    <a href="mailto:sarmiento21sofia@gmail.com">
+                        <img class="social-icon" src="assets/socialslight/email.png" width="40" alt="Email">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li>sarmiento21sofia@gmail.com</li>
+                    <li>+63 922 949 5255</li>
+                    <li>Pampanga, Philippines</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>By Sofia Sarmiento</span>
+            <span>&copy; 2025 All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

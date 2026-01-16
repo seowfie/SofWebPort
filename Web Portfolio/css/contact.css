@@ -1,0 +1,315 @@
+/* --- contact.css --- */
+
+/* MAIN LAYOUT */
+.contact-main {
+    margin-top: 140px; /* Space for fixed navbar */
+    width: 100%;
+    max-width: 1344px; /* Fixed width to match Home/About */
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 80px;
+    box-sizing: border-box;
+}
+
+/* HEADER SECTION */
+.contact-header {
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.contact-header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    font-family: var(--heading-font);
+    font-style: var(--heading-style);
+    color: var(--heading-color);
+    line-height: 1.1;
+}
+
+.contact-header p {
+    font-family: var(--body-font);
+    font-size: 1.1rem;
+    opacity: 0.8;
+    max-width: 600px;
+    color: var(--body-color);
+}
+
+[data-theme="dark"] .status-badge {
+    background-color: #C3F208;
+    color: #364153;
+}
+/* Dark Mode Header Overrides */
+[data-theme="dark"] .contact-header h1 {
+    font-family: 'Space Mono', monospace;
+    font-style: normal;
+    color: #C3F208;
+}
+
+/* GRID CONTAINER */
+.contact-grid {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 100px;
+    width: 100%;
+}
+
+/* LEFT: CONTACT FORM CARD */
+.contact-form-card {
+    flex: 2; /* Takes up 2/3 of the width */
+    background: #ffffff;
+    border-radius: 32px;
+    padding: 50px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form-card h2 {
+    font-family: var(--heading-font);
+    font-style: var(--heading-style);
+    color: #775635;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+/* Dark Mode Form Card */
+[data-theme="dark"] .contact-form-card {
+    background: #21262D; /* Dark Grey Surface */
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+[data-theme="dark"] .contact-form-card h2 {
+    font-family: 'Space Mono', monospace;
+    font-style: normal;
+    color: #C3F208; /* Lime Green Title */
+}
+
+/* FORM ELEMENTS */
+.form-row {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    font-family: var(--nav-font);
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    color: var(--heading-color);
+}
+
+[data-theme="dark"] .form-group label {
+    color: #C3F208;
+}
+
+.form-group input, 
+.form-group textarea {
+    padding: 18px;
+    border-radius: 12px;
+    border: 1px solid #E0E0E0;
+    background: #F9F9F9;
+    font-family: var(--body-font);
+    font-size: 1rem;
+    color: #364153;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    border-color: #FBE29D;
+}
+
+/* Dark Mode Inputs */
+[data-theme="dark"] .form-group input, 
+[data-theme="dark"] .form-group textarea {
+    background: #30363D;
+    border: 1px solid #444;
+    color: #fff;
+}
+
+[data-theme="dark"] .form-group input:focus, 
+[data-theme="dark"] .form-group textarea:focus {
+    border-color: #C3F208;
+}
+
+/* RIGHT: INFO COLUMN */
+.contact-info-column {
+    flex: 1; /* Takes up 1/3 of the width */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.info-card {
+    background: #ffffff;
+    border-radius: 32px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+}
+
+[data-theme="dark"] .info-card {
+    background: #21262D;
+}
+
+.info-card h3 {
+    margin-bottom: 25px;
+    font-family: var(--nav-font);
+    font-size: 1.2rem;
+    color: #775635;
+}
+
+[data-theme="dark"] .info-card h3 {
+    color: #fff; /* White title in info cards */
+}
+
+/* Info Items (Email, Phone, Loc) */
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.icon-box {
+    width: 45px; 
+    height: 45px;
+    background: #FBE29D; /* Light Mode Yellow */
+    border-radius: 50%;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+[data-theme="dark"] .icon-box {
+    background: #30363D;
+    border: 1px solid #C3F208;
+    color: #C3F208;
+}
+
+.info-item .label {
+    font-size: 0.8rem; 
+    opacity: 0.7; 
+    display: block;
+    margin-bottom: 2px;
+}
+
+.info-item p {
+    font-family: var(--body-font);
+    font-weight: bold; 
+    font-size: 0.95rem;
+    color: var(--body-color);
+}
+
+/* Social Grid (2x2) */
+.social-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.social-link-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-family: var(--nav-font);
+    font-size: 0.85rem;
+    color: var(--body-color);
+    gap: 10px;
+    padding: 15px;
+    border-radius: 16px;
+    transition: background 0.2s ease;
+}
+
+.social-link-item:hover {
+    background: rgba(0,0,0,0.03);
+}
+
+[data-theme="dark"] .social-link-item {
+    color: #fff;
+}
+
+[data-theme="dark"] .social-link-item:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+/* AVAILABILITY BANNER SECTION */
+.availability-section {
+    position: relative;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.availability-doodle {
+    position: absolute;
+    /* Adjust this value to make the character peek more or less */
+    top: -83px; 
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    width: 320px; 
+    pointer-events: none; /* Allows clicking through if needed */
+}
+
+.availability-doodle img {
+    width: 100%;
+    display: block;
+}
+
+.availability-banner {
+    /* Light Mode Gradient */
+    background: linear-gradient(90deg, #FBE29D 0%, #C0DDDA 100%);
+    border-radius: 48px;
+    padding: 80px 60px 60px 60px; /* Top padding clears space for doodle */
+    text-align: center;
+    position: relative;
+    z-index: 0;
+}
+
+.availability-banner h2 {
+    font-family: var(--heading-font);
+    font-style: var(--heading-style);
+    font-size: 3rem;
+    color: #775635;
+    margin-bottom: 20px;
+}
+
+.availability-banner p {
+    font-family: var(--body-font);
+    max-width: 700px;
+    margin: 0 auto;
+    color: #364153;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Dark Mode Banner Overrides */
+[data-theme="dark"] .availability-banner {
+    /* Lime Gradient */
+    background: linear-gradient(180deg, #C3F208 0%, rgba(162, 201, 6, 0.4) 100%);
+}
+
+[data-theme="dark"] .availability-banner h2 {
+    font-family: 'Space Mono', monospace;
+    font-style: normal;
+    color: #161B22; /* Dark Text on Lime BG */
+}
+
+[data-theme="dark"] .availability-banner p {
+    color: #161B22; /* Dark Text on Lime BG */
+    font-weight: 500;
+}

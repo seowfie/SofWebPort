@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Sofia Sarmiento</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/projects.css">
+</head>
+<body>
+
+    <div class="navbar-wrapper">
+        <nav>
+            <div class="nav-logo">
+                <a href="home.html"><img src="assets/portlogo.png" alt="Logo"></a>
+            </div>
+            <div class="nav-links">
+                <a href="about.html">About</a>
+                <a href="projects.html" class="active-link">Projects</a>
+                <a href="resume.html">Resume</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <button id="theme-toggle" class="theme-toggle-btn">
+                <svg class="icon-sun" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg class="icon-moon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+        </nav>
+    </div>
+
+    <main class="projects-main">
+        
+        <header class="projects-header">
+            <div class="status-badge" style="margin-bottom: 20px;">
+                <span>✨ </span> My Works
+            </div>
+            <h1>My Projects</h1>
+            <p>A collection of my recent work across design and development.</p>
+        </header>
+
+        <section class="filter-section">
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="project-search" placeholder="Search projects...">
+            </div>
+            
+            <div class="filter-container">
+                <span class="filter-label">Filter by:</span>
+                <div class="filter-buttons" id="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="web">Web Design</button>
+                    <button class="filter-btn" data-filter="uiux">UI/UX</button>
+                    <button class="filter-btn" data-filter="mobile">Mobile Design</button>
+                    <button class="filter-btn" data-filter="dev">Development</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="projects-grid" id="projects-grid">
+            
+            <div class="project-card large-card" data-category="web dev">
+                <div class="project-img-container">
+                    <img src="assets/projects/floravia.png" alt="Floravia">
+                    <div class="overlay">
+                        <button class="view-btn" onclick="openModal('floravia')">View Details ↗</button>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="tags">
+                        <span class="tag">Web Design</span><span class="tag">MongoDB</span><span class="tag">Vue.js</span>
+                    </div>
+                    <h3>Floravia: A Flower Shop Management System</h3>
+                    <p>A responsive e-commerce web application with features for both customers and administrators.</p>
+                    <button class="link-btn" onclick="openModal('floravia')">View Details &rarr;</button>
+                </div>
+            </div>
+
+            <div class="project-card medium-card" data-category="web uiux">
+                <div class="project-img-container" style="background: #FBE29D; display: flex; align-items: center; justify-content: center;">
+                    <span style="font-family: var(--nav-font); font-weight: bold; opacity: 0.5;">Website Preview</span>
+                    <div class="overlay">
+                        <button class="view-btn" onclick="openModal('accesspoint')">View Details ↗</button>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="tags"><span class="tag">UI/UX</span><span class="tag">Web Design</span></div>
+                    <h3>The Access Point Website</h3>
+                    <p>Official website maintenance and content strategy management.</p>
+                    <button class="link-btn" onclick="openModal('accesspoint')">View Details &rarr;</button>
+                </div>
+            </div>
+
+            <div class="project-card small-card" data-category="web uiux">
+                <div class="project-img-container">
+                    <img src="assets/projects/portfolio.png" alt="Portfolio"> 
+                    <div class="overlay">
+                        <button class="view-btn" onclick="openModal('portfolio')">View Details ↗</button>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="tags"><span class="tag">Web Design</span><span class="tag">UI/UX</span></div>
+                    <h3>Portfolio Website</h3>
+                    <p>A personal showcase of my UI/UX design and front-end skills.</p>
+                    <button class="link-btn" onclick="openModal('portfolio')">View Details &rarr;</button>
+                </div>
+            </div>
+
+            <div class="project-card small-card" data-category="web dev">
+                <div class="project-img-container">
+                    <img src="assets/projects/pokemon.png" alt="Pokemon Center">
+                    <div class="overlay">
+                        <button class="view-btn" onclick="openModal('pokemon')">View Details ↗</button>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="tags"><span class="tag">Angular</span><span class="tag">Tailwind</span></div>
+                    <h3>Pokemon Center Web</h3>
+                    <p>Designed with a clean, user-friendly interface for easy navigation.</p>
+                    <button class="link-btn" onclick="openModal('pokemon')">View Details &rarr;</button>
+                </div>
+            </div>
+
+            <div class="project-card small-card" data-category="web uiux">
+                <div class="project-img-container">
+                    <img src="assets/projects/aiconference.png" alt="AI Conference">
+                    <div class="overlay">
+                        <button class="view-btn" onclick="openModal('ai')">View Details ↗</button>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="tags"><span class="tag">UI/UX</span><span class="tag">Web Design</span></div>
+                    <h3>AI Conference Website</h3>
+                    <p>A responsive website deployed for the 1st Regional AI Conference.</p>
+                    <button class="link-btn" onclick="openModal('ai')">View Details &rarr;</button>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modal-body">
+                </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-main">
+            <div class="footer-col brand-col">
+                <h3>Let's Create Together</h3>
+                <p>Always excited to collaborate on new projects and creative ideas!</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/sarmientosof" target="_blank" rel="noopener">
+                        <img class="social-icon" src="assets/socialslight/linkedin.png" width="40" alt="LinkedIn">
+                    </a>
+
+                    <a href="https://github.com/seowfie" target="_blank" rel="noopener">
+                        <img class="social-icon" src="assets/socialslight/github.png" width="40" alt="GitHub">
+                    </a>
+
+                    <a href="mailto:sarmiento21sofia@gmail.com">
+                        <img class="social-icon" src="assets/socialslight/email.png" width="40" alt="Email">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li>sarmiento21sofia@gmail.com</li>
+                    <li>+63 922 949 5255</li>
+                    <li>Pampanga, Philippines</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>By Sofia Sarmiento</span>
+            <span>&copy; 2025 All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="projects.js"></script>
+</body>
+</html>
